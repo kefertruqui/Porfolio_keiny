@@ -14,7 +14,7 @@ import Code from "../components/Icons/Code.astro";
 import Projects from "../components/Projects.astro";
 ---
 
-<Layout title="Porfolio de tom - Desarrollador web" description="Waos">
+<Layout title="Porfolio Keiny - Desarrollador web" description="Waos">
   <main class="">
     <SectionContainer class="py-24 md:py-36 pb-16 md:pb-24">
       <img
@@ -24,7 +24,7 @@ import Projects from "../components/Projects.astro";
       />
 
       <h1
-        class="text-white text-3xl text-pretty md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-4 md:pb-6 lg:pb-10"
+        class="dark:text-white text-black text-3xl text-pretty md:text-4xl lg:text-5xl font-medium flex flex-row gap-x-4 pb-4 md:pb-6 lg:pb-10"
       >
         Hola, Soy Keiny
         <a
@@ -37,63 +37,61 @@ import Projects from "../components/Projects.astro";
         </a>
       </h1>
       <h2 class="text-lg md:text-xl lg:text-2xl text-wrap max-w-[700px]">
-        <span class="opacity-80">
-          Estudiante de Ingeniería de Sistemas con una sólida formación en
-          diversos lenguajes de programación, incluyendo
+        <span class="text-purple-800">Ingeniera de Sistemas</span>
+        <span class="opacity-80 dark:text-white text-black" >
+           con una sólida formación en
+          diversos campos relacionado con TI, apasionada del diseño
         </span>
-        <span class="text-purple-400"> C++, C#, Java y Python </span>
-        <span class="opacity-80">. Tengo experiencia en el </span>
-        <span class="text-purple-400"
-          >diseño y administración de bases de datos</span
+        <span class="opacity-80 dark:text-white text-black">. Tengo experiencia en el </span>
+        <span class="text-purple-800"
+          >desarrollo web, bases de datos Sql y NoSql, Inteligencia de Negocio, SIG, Modelado 3D, comunicación con el cliente</span
         >
-        <span class="opacity-80">
-          . Siempre estoy en la búsqueda de nuevas oportunidades para aprender y
-          desarrollar mis habilidades, con el objetivo de crear proyectos
-          innovadores.
+        <span class="opacity-80 dark:text-white text-black">
+          . Siempre estoy en la búsqueda de nuevas retos para aprender y
+          desafiar mi creatividad.
         </span>
       </h2>
-      <nav class="flex gap-2 md:gap-4 mt-4 md:mt-8 flex-wrap">
+      <nav class="flex gap-2 md:gap-4 mt-4 md:mt-8 flex-wrap dark:text-white text-black">
         <SocialPill
-          href="https://www.linkedin.com/in/keiny-fernanda-trujillo-quiroz-514508271/"
-        >
-          <LinkedIn class="w-4 h-4 md:w-6 md:h-6" />
+          href="https://www.linkedin.com/in/keiny-fernanda-trujillo-quiroz-514508271/">
+          <LinkedIn class="w-4 h-4 md:w-6 md:h-6 dark:text-white text-black"/>
           LinkedIn
         </SocialPill>
         <SocialPill href="https://github.com/kefertruqui">
-          <Github class="w-4 h-4 md:w-6 md:h-6" />
+          <Github class="w-4 h-4 md:w-6 md:h-6 dark:text-white text-black" />
           Github
         </SocialPill>
         <SocialPill href="https://web.facebook.com/keiny.trujillo">
-          <Facebook class="w-4 h-4 md:w-6 md:h-6" />
+          <Facebook class="w-4 h-4 md:w-6 md:h-6 dark:text-white text-black" />
           Facebook
         </SocialPill>
       </nav>
     </SectionContainer>
 
+    <SectionContainer id="Habilidades">
+      <h2
+        class="text-xl md:text-2xl font-semibold mb-4 md:mb-6 flex gap-x-2 md:gap-x-3 items-center dark:text-white text-black"
+      >
+        <Skill class="w-6 h-6 md:w-7 md:h-7 dark:text-white text-black" />
+        Habilidades
+      </h2>
+    </SectionContainer>
+
     <SectionContainer id="Experiencia">
       <h2
-        class="text-xl md:text-2xl font-semibold mb-4 md:mb-6 flex gap-x-2 md:gap-x-3 items-center"
+        class="text-xl md:text-2xl font-semibold mb-4 md:mb-6 flex gap-x-2 md:gap-x-3 items-center dark:text-white text-black"
       >
-        <Maleta class="w-6 h-6 md:w-7 md:h-7" />
+        <Maleta class="w-6 h-6 md:w-7 md:h-7 dark:text-white text-black" />
         Experiencia laboral
       </h2>
       <Experience />
     </SectionContainer>
 
-    <SectionContainer id="Habilidades">
-      <h2
-        class="text-xl md:text-2xl font-semibold mb-4 md:mb-6 flex gap-x-2 md:gap-x-3 items-center"
-      >
-        <Skill class="w-6 h-6 md:w-7 md:h-7" />
-        Habilidades
-      </h2>
-    </SectionContainer>
-
     <SectionContainer id="Proyectos">
       <h2
-        class="text-xl md:text-2xl font-semibold mb-4 md:mb-6 flex gap-x-2 md:gap-x-3 items-center"
+        class="text-xl md:text-2xl font-semibold mb-4 md:mb-6 flex gap-x-2 md:gap-x-3 items-center dark:text-white text-black"
       >
-        <Code class="w-6 h-6 md:w-7 md:h-7" />
+        <Code class="w-6 h-6 md:w-7 md:h-7 dark:text-white text-black"/>
         Proyectos
       </h2>
 
@@ -105,7 +103,6 @@ import Projects from "../components/Projects.astro";
 <style>
   img{
     object-fit: contain;
-    
   }
 </style>
 

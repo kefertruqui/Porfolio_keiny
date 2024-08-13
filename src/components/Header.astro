@@ -1,18 +1,17 @@
 ---
-
+import ThemeToggle from "./ThemeToggle.astro"
 ---
 
-<header class="flex justify-between items-center px-10 mx-auto border-b-2 shadow-lg border-purple-950 shadow-purple-900">
-  <img
-    src="/Logosinfondo.png"
-    class="rounded-full size-20 lg:size-20"
-  />
+<header class="flex justify-center items-center px-10 mx-auto border-b-1 dark:text-white text-black shadow-lg border-purple-950 shadow-purple-900">
+  <h1 class="rounded-full size-20 lg:size-20"
+  /> 
   <nav class="flex flex-col gap-x-10 gap-5 opacity-80" >
     <a href="#top">Inicio</a>
     <a href="#sobre-mi">Sobre mi</a>
     <a href="#Experiencia">Experiencia</a>
     <a href="#Proyectos">Proyectos</a>
     <a href="#contacto">Contacto</a>
+    <ThemeToggle/>
   </nav>
 </header>
 

@@ -3,15 +3,31 @@ import ExperienceItem from "./ExperienceItem.astro";
 
 const Exp = [
   {
-    date: "Actualmente",
-    title: "Asistente de investigacion/Desarrollador - UCEVA",
+    date: "Actualmente...",
+    title: "Docente de Python",
+    company: "KODLAND",
     description:
-      "Desarrollo de una aplicacion movil en convenio con la UDLA y UCEVA",
+      "Guía de estudiantes en diversas edades en su viaje de aprendizaje de videojuegos en el lenguaje de programación Python. ",
   },
+  {
+    date: "Actualmente...",
+    title: "Auxiliar técnico en salas de computo",
+    company: "Universidad de la Amazonia",
+    description:
+      "Soporte tecnico en salas de computo y atención al cliente en incidencias presentes en la plataforma de la UDLA.",
+  },
+  {
+    date: "2022",
+    title: "Monitor docente de Redes Informaticas",
+    company: "Universidad de la Amazonia",
+    description:
+      "Apoyo y guía en el laboratorio de redes de la UDLA como refuerzo de los temas orientados en el curso.",
+  },
+
 ];
 ---
 
-<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+<ol class="relative border-s border-purple-400 dark:border-purple-950 ml-2">
   {
     Exp.map((Exp) => (
       <li class="mb-10 ms-4">

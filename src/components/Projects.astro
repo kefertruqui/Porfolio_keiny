@@ -2,6 +2,13 @@
 import Css from "./Icons/Css.astro";
 import Html from "./Icons/Html.astro";
 import Js from "./Icons/Js.astro";
+import Net from "./Icons/Net.astro";
+import Mysql from "./Icons/Mysql.astro";
+import MongoDb from "./Icons/MongoDb.astro";
+import Csharp from "./Icons/Csharp.astro";
+import LinkButton from "./LinkButton.astro";
+import Link from "./Icons/Link.astro";
+
 
 const Tags = {
   Css: {
@@ -19,29 +26,64 @@ const Tags = {
     class: "bg-[#fffff]  text-yellow-300 border border-yellow-300",
     icon: Js,
   },
+  Net: {
+    name: "Net",
+    class: "bg-[#fffff]  text-purple-800 border border-purple-800",
+    icon: Net,
+  },
+  Mysql: {
+    name: "Mysql",
+    class: "bg-[#fffff]  text-[#007c7c] border border-[#007c7c]",
+    icon: Mysql,
+  },
+  MongoDb: {
+    name: "MongoDb",
+    class: "bg-[#fffff]  text-[#007c7c] border border-[#007c7c]",
+    icon: MongoDb,
+  },
+  Csharp: {
+    name: "Csharp",
+    class: "bg-[#fffff]  text-purple-500 border border-purple-500",
+    icon: Csharp,
+  },
 };
 
 const proyectos = [
   {
-    title: "Encriptador de texto",
+    title: "Modulo de Gestión y Seguimiento de Graduados/Egresados",
     description:
-      "Encriptador Realizado para el challenges de alura x oracle ONE",
-    img: "Projects/Encriptador.webp",
+      "Modulo desarrollado para el seguimiento de la información de los Egresados y graduados por medio de encuestas.",
+    img: "Projects/Modulo.png",
     url: "https://encriptador-delta-five.vercel.app/",
-    tags: [Tags.Html, Tags.Css, Tags.Js],
+    tags: [Tags.Html, Tags.Css, Tags.Js, Tags.Csharp],
     github: "https://github.com/Tom21-xd/Encriptador",
+  },
+  {
+    title: "Inventario viveros",
+    description:
+      "Sistema web desarrollado para inventarios de viveros.",
+    img: "Projects/Vivero.png",
+    url: "https://encriptador-delta-five.vercel.app/",
+    tags: [Tags.Html, Tags.Css, Tags.Js, Tags.Net, Tags.Mysql, Tags.Csharp],
+    github: "https://github.com/kefertruqui/inventario_viveros",
   },
 ];
 ---
 
 {
   proyectos.map((proyecto) => (
-    <article>
-      <h3 class="text-2xl font-semibold text-purple-400 mb-2">
+    <article class="columns-2 mx-4 my-10">
+      <img
+        class="rounded-lg shadow-2xl shadow-white/10]"
+        src={proyecto.img}
+        alt={proyecto.title}
+      />
+      <div>
+      <h3 class="text-2x1 font-semibold text-purple-400 mb-2">
         {proyecto.title}
       </h3>
-      <p class="text-lg mb-4 text-pretty">{proyecto.description}</p>
-      <ul class="flex gap-x-4 flex-row mb-2">
+      <p class="text-lg mb-4 text-pretty dark:text-white text-black">{proyecto.description}</p>
+      <ul class="flex gap-x-5 flex-row mb-2">
         {proyecto.tags.map((tag) => (
           <li>
             <span
@@ -53,11 +95,7 @@ const proyectos = [
           </li>
         ))}
       </ul>
-      <img
-        class="rounded shadow-2xl shadow-white/10 ]"
-        src={proyecto.img}
-        alt={proyecto.title}
-      />
-    </article>
+    </div>
+  </article>
   ))
 }
