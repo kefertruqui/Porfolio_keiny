@@ -6,8 +6,13 @@ import Net from "./Icons/Net.astro";
 import Mysql from "./Icons/Mysql.astro";
 import MongoDb from "./Icons/MongoDb.astro";
 import Csharp from "./Icons/Csharp.astro";
+import Oracle from "./Icons/Oracle.astro";
 import LinkButton from "./LinkButton.astro";
 import Link from "./Icons/Link.astro";
+import Github from "./Icons/Github.astro";
+import Power_Bi from "./Icons/Power_Bi.astro";
+import Excel from "./Icons/Excel.astro"
+
 
 
 const Tags = {
@@ -46,6 +51,21 @@ const Tags = {
     class: "bg-[#fffff]  text-purple-500 border border-purple-500",
     icon: Csharp,
   },
+  Oracle: {
+    name: "Oracle",
+    class: "bg-[#fffff]  text-red-500 border border-red-500",
+    icon: Oracle,
+  },
+  Power_Bi: {
+    name: "Power_Bi",
+    class: "bg-[#fffff]  text-[#edef00] border border-[#edef00]",
+    icon: Power_Bi,
+  },
+  Excel: {
+    name: "Excel",
+    class: "bg-[#fffff]  text-[#009929] border border-[#009929]",
+    icon: Excel,
+  },
 };
 
 const proyectos = [
@@ -55,8 +75,7 @@ const proyectos = [
       "Modulo desarrollado para el seguimiento de la información de los Egresados y graduados por medio de encuestas.",
     img: "Projects/Modulo.png",
     url: "https://encriptador-delta-five.vercel.app/",
-    tags: [Tags.Html, Tags.Css, Tags.Js, Tags.Csharp],
-    github: "https://github.com/Tom21-xd/Encriptador",
+    tags: [Tags.Html, Tags.Css, Tags.Js, Tags.Csharp, Tags.Oracle],
   },
   {
     title: "Inventario viveros",
@@ -67,35 +86,85 @@ const proyectos = [
     tags: [Tags.Html, Tags.Css, Tags.Js, Tags.Net, Tags.Mysql, Tags.Csharp],
     github: "https://github.com/kefertruqui/inventario_viveros",
   },
+  {
+    title: "Dashboard Comportamiento del Café",
+    description:
+      "Informe de seguimiento sobre el comportamiento del café",
+    img: "Projects/cafedash.png",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiMzIxYTY0Y2ItZjZlNS00ZjQwLTkyYTYtNGVjNTdkZmY5OWI0IiwidCI6IjY0ZWJjNzhlLTBhNWYtNDRlMS1hNTA0LTU3MTNlZmY2NGIzMyIsImMiOjR9",
+    tags: [Tags.Power_Bi, Tags.Excel],
+  },
+  {
+    title: "Dashboard proceso de Internalización",
+    description:
+      "Informe de seguimiento estrategico para la Internalización",
+    img: "Projects/inter2.png",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiZTdjNGE5OTUtN2Y3Mi00NmIyLWIyYzMtYzA1ZjhjMDc0MGJlIiwidCI6IjY0ZWJjNzhlLTBhNWYtNDRlMS1hNTA0LTU3MTNlZmY2NGIzMyIsImMiOjR9",
+    tags: [Tags.Power_Bi, Tags.Excel],
+  },
+  {
+    title: "Dashboard plan estrategico",
+    description:
+      "Informe de seguimiento plan estrategico de procesos de Internacionales",
+    img: "Projects/inter1.png",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiZTdjNGE5OTUtN2Y3Mi00NmIyLWIyYzMtYzA1ZjhjMDc0MGJlIiwidCI6IjY0ZWJjNzhlLTBhNWYtNDRlMS1hNTA0LTU3MTNlZmY2NGIzMyIsImMiOjR9",
+    tags: [Tags.Power_Bi, Tags.Excel],
+  },
 ];
 ---
 
-{
-  proyectos.map((proyecto) => (
-    <article class="columns-2 mx-4 my-10">
-      <img
-        class="rounded-lg shadow-2xl shadow-white/10]"
-        src={proyecto.img}
-        alt={proyecto.title}
-      />
-      <div>
-      <h3 class="text-2x1 font-semibold text-purple-400 mb-2">
-        {proyecto.title}
-      </h3>
-      <p class="text-lg mb-4 text-pretty dark:text-white text-black">{proyecto.description}</p>
-      <ul class="flex gap-x-5 flex-row mb-2">
-        {proyecto.tags.map((tag) => (
-          <li>
-            <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-            >
-              <tag.icon class="size-4" />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </article>
-  ))
-}
+<div class="flex flex-col gap-y-16">
+  {
+    proyectos.map(({ img, title, description, tags, url, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt=""
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={img}
+            />
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex-wrap mt-2">
+            <ul class="flex flex-wrap mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <Github class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {url && (
+                <LinkButton href={url}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>
